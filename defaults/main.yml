@@ -1,2 +1,22 @@
 ---
-# defaults file for ansible-el-nodejs
+## defaults file for ansible-el-nodejs
+
+## Packages to install via YUM
+ansible_el_nodejs__packages:
+  - nodejs
+  - npm
+
+## Set to false if you don't want to install PM2
+ansible_el_nodejs__install_pm2: true
+
+## Set if you want to install other npm packages:
+#ansible_el_nodejs__npm_packages:
+#  - package1
+#  - package2
+#  - ...packagen
+
+## If you want to run pm2 processes with a specific user (please, never run any service as root) set it here:
+#ansible_el_nodejs__pm2user: node
+
+## Also, if you want to deploy ssh_public_keys to allow others to ssh in with this user, set file path for them here:
+#ansible_el_nodejs__pm2user_public_keys_file: public_keys/linux_team.keys
