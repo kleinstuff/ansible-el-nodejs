@@ -3,6 +3,10 @@
 
 ## Packages to install via YUM
 ansible_el_nodejs__packages:
+  - kernel-devel
+  - kernel-headers
+  - gcc-c++
+  - make
   - nodejs
   - nodejs-devel
   - npm
