@@ -45,7 +45,7 @@
 - name: Disable Firewalld
   systemd:
     name: firewalld
-    state: disabled
+    enabled: no
     state: stopped
   when: ansible_el_nodejs__disable_firewalld is defined
     
