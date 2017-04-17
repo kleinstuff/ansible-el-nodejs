@@ -26,13 +26,13 @@
     "{{ ansible_el_nodejs__npm_packages }}"
   when: ansible_el_nodejs__npm_packages is defined
 
-- name: Create pm2 process user {{ ansible_el_nodejs__pm2user }}
+- name: Create pm2 process user "{{ ansible_el_nodejs__pm2user }}"
   user:
     name: "{{ ansible_el_nodejs__pm2user }}"
     state: present
   when: ansible_el_nodejs__pm2user is defined
 
-- name: Deploy ssh keys to user {{ ansible_el_nodejs__pm2user }}
+- name: Deploy ssh keys to user "{{ ansible_el_nodejs__pm2user }}"
   authorized_key:
     user: "{{ ansible_el_nodejs__pm2user }}"
     state: present
