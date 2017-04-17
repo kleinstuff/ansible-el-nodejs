@@ -4,6 +4,7 @@
 ## Packages to install via YUM
 ansible_el_nodejs__packages:
   - nodejs
+  - nodejs-devel
   - npm
 
 ## Set to false if you don't want to install PM2
@@ -11,9 +12,9 @@ ansible_el_nodejs__install_pm2: true
 
 ## Set if you want to install other npm packages:
 #ansible_el_nodejs__npm_packages:
-#  - package1
-#  - package2
-#  - ...packagen
+#  - { name: 'package1', global: 'yes'}
+#  - { name: 'package2', global: 'no'}
+#  - { name: 'packageN', global: 'no'}
 
 ## If you want to run pm2 processes with a specific user (please, never run any service as root) set it here:
 #ansible_el_nodejs__pm2user: node

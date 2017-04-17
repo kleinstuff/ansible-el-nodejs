@@ -22,11 +22,10 @@ All variables are setup on defaults/main.yml
       ansible_el_nodejs__install_pm2: true
 
 ### Install other npm packages (default: none):
-        ansible_el_nodejs__npm_packages:
-          - package1
-          - package2
-          - ...packagen
-
+      ansible_el_nodejs__npm_packages:
+        - { name: 'package1', global: 'yes'}
+        - { name: 'package2', global: 'no'}
+        - { name: 'packageN', global: 'no'}
 ### Create an user to run applications/pm2 (default: no)
         ansible_el_nodejs__pm2user: username
 
