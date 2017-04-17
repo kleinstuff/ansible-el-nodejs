@@ -25,3 +25,7 @@ ansible_el_nodejs__install_pm2: true
 
 ## Also, if you want to deploy ssh_public_keys to allow others to ssh in with this user, set file path for them here:
 #ansible_el_nodejs__pm2user_public_keys_file: public_keys/linux_team.keys
+
+## You are probably not running nodejs with direct access, probably you have a load balancer in front of it
+## If so, you can set this to disable firewalld and open all ports
+#ansible_el_nodejs__disable_firewalld = true

@@ -41,3 +41,12 @@
   with_file:
     "{{ ansible_el_nodejs__pm2user_public_keys_file }}"
   when: ansible_el_nodejs__pm2user_public_keys_file is defined
+
+- name: Disable Firewalld
+  systemd:
+    name: firewalld
+    state: disabled
+    state: stopped
+  when: ansible_el_nodejs__disable_firewalld is defined
+    
+
